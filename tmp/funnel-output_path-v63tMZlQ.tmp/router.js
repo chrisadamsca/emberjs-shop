@@ -1,0 +1,1 @@
+/Users/Dary/hatchling/tmp/funnel-input_base_path-qxglJDZ8.tmp/0/router.js

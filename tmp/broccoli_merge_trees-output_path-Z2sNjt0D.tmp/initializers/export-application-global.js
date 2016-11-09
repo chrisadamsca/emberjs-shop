@@ -1,0 +1,1 @@
+/Users/Dary/hatchling/tmp/broccoli_merge_trees-input_base_path-PrNlvH4y.tmp/16/initializers/export-application-global.js

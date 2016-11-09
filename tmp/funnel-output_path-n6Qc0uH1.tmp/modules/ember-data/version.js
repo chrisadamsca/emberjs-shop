@@ -1,0 +1,1 @@
+/Users/Dary/hatchling/tmp/creator-output_path-s0F2mRXf.tmp/version.js
