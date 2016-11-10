@@ -8,6 +8,11 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('orders');
+  this.route('products', function(){
+  	this.route('product', {path: '/:product_id'});
+  });
+  this.route('users');
+  this.route('user');
 }); 
 
 export default Router;
