@@ -1,1 +1,0 @@
-/Users/Dary/hatchling/tmp/funnel-input_base_path-cisSvMPE.tmp/0/initializer-factory.js
