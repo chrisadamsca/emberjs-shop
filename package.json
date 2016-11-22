@@ -1,0 +1,14 @@
+{
+  "name": "hatchling",
+  "version": "0.0.0",
+  "description": "hatchling",
+  "main": "server.js",
+  "author": "lostw",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
