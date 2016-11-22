@@ -1,0 +1,3 @@
+[submodule "EmberHatchling"]
+	path = EmberHatchling
+	url = https://github.com/hatchling-shop/hatchling.git

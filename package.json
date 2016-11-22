@@ -1,0 +1,30 @@
+{
+  "name": "hatchling",
+  "version": "1.0.0",
+  "description": "hatchling - The online shop for baby clothing",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hatchling-shop/hatchling.git"
+  },
+  "keywords": [
+    "hatchling;",
+    "baby;",
+    "shop;",
+    "online;",
+    "clothing"
+  ],
+  "author": "Darja Ferber",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hatchling-shop/hatchling/issues"
+  },
+  "homepage": "https://github.com/hatchling-shop/hatchling#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
