@@ -1,8 +1,9 @@
-Products page
-<ul>
-  {{model.name}}
+{{outlet}}
+<ul class="product-list">
 {{#each model as |product|}}
+<li>
   {{#product-tile product=product}}
   {{/product-tile}}
+  </li>
 {{/each}}
 </ul>
