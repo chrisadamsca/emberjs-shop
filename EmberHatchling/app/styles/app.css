@@ -1,6 +1,8 @@
+@import url('http://fonts.googleapis.com/css?family=Kalam');    
+
 body {
     color: #777777;
-    font-family: Arial;
+    font-family: Rubik, sans-serif;
 }
 
 ul.product-list {
@@ -179,7 +181,7 @@ div.rating > p
 }
 
 
-
+//prototype
 .single-item {
     box-sizing: border-box;
     margin: 30px;
