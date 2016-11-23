@@ -9,8 +9,8 @@ module.exports.getAllProducts = function(req, res) {
     });
 };
 
-module.exports.getProduct = function(req, res) {
-    Product.findById(req.params.bear_id, function(err, product) {
+module.exports.getProduct = function(id, req, res) {
+    Product.findById(id, function(id, err, product) {
         if (err) {
           res.send(err);
         }
