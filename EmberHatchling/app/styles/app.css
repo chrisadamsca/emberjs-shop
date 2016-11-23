@@ -1,8 +1,8 @@
-@import url('http://fonts.googleapis.com/css?family=Kalam');    
+@import url('http://fonts.googleapis.com/css?family=Rubik');    
 
 body {
     color: #777777;
-    font-family: Rubik, sans-serif;
+    font-family: Rubik,Times New Roman;
 }
 
 ul.product-list {
