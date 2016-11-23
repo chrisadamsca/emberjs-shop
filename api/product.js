@@ -18,6 +18,24 @@ module.exports.getProduct = function(id, req, res) {
     });
 };
 
+module.exports.getByGender = function(gender, req, res) {
+    Product.find({ 'category.gender': gender }, function(err, product) {
+        if (err) {
+          res.send(err);
+        }
+        res.json({product: product});
+    });
+};
+
+module.exports.getByCategory = function(gender, cat, req, res) {
+    Product.find({ 'category.gender': gender }, function(err, product) {
+        if (err) {
+          res.send(err);
+        }
+        res.json({product: product});
+    }).where('category.name', cat);
+};
+
 module.exports.addProduct = function(req,res) {
     var product = new Product(req.body.product);
     product.save(function(err) {
