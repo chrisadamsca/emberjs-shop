@@ -1,0 +1,16 @@
+{{yield}}
+<article class="product-container" itemscope itemtype="http://schema.org/Product">
+    <a href="#" title="#" itemprop="url"><img src={{product.imgUrl}} alt={{product.title}} itemprop="image" />
+      <h1 class="title" itemprop="name">{{product.title}}</h1>
+      <div class="description" itemprop="description">
+          <p>{{product.description}}</p>
+      </div>
+      <div class="rating" itemscope itemtype="http://schema.org/AggregateRating">
+          <p>Rating: <span itemprop="ratingValue">{{product.rating}}</span>/<span itemprop="bestRating">5</span></p>
+      </div>
+      <div class="offer" itemscope itemtype="http://schema.org/Offer">
+          <span class="price" itemprop="price">{{product.price}}</span>
+          <span class="availability" itemprop="availability">In stock!</span>
+      </div>
+    </a>
+</article>
