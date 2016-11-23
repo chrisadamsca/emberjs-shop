@@ -1,1 +1,26 @@
-{{outlet}}
+Products page
+<ul>
+{{#each model as |product|}}
+  {{product.name}}
+  <!-- {{#product-tile product=product}}
+  {{/product-tile}} -->
+{{/each}}
+</ul>
+
+
+<h1>Products:</h1>
+
+<ul>
+{{#each model as |product|}}
+  <li>
+    Name: {{product.name}}<br/>
+    Beschreibung: {{product.description}}<br/>
+    Größe: {{product.size}}<br/>
+    Preis: {{product.price}}€<br/>
+    Bewertung: {{product.rating}}/5<br/>
+    id: {{product.rating}}
+    <img src={{product.imgUrl}} alt="" width="200px">
+  </li>
+  <br>
+{{/each}}
+</ul>
