@@ -22,40 +22,34 @@ header {
   justify-content: space-between; }
 
 header > div.logo-container {
+  margin-left: 5px;
   height: 100%;
   max-width: 50%; }
-
-header > div.logo-container > img.logo-img {
-  height: 100%;
-  width: auto;
-  display: inline-block; }
-
-header > div.logo-container > h1.logo-title {
-  display: inline-block;
-  padding-bottom: 20px; }
+  header > div.logo-container > img.logo-img {
+    height: 100%;
+    width: auto;
+    display: inline-block; }
+  header > div.logo-container > h1.logo-title {
+    display: inline-block;
+    padding-bottom: 20px; }
 
 header > div.search-cart-login-container {
   display: flex;
   align-items: center; }
-
-header > div.search-cart-login-container > a {
-  display: inline-block;
-  text-decoration: none;
-  color: #777777; }
-
-header > div.search-cart-login-container > a.login {
-  font-weight: bold;
-  padding-right: 20px; }
-
-header > div.search-cart-login-container > a.cart > img {
-  padding-right: 5px; }
-
-header > div.search-cart-login-container > input {
-  margin: 20px 0 20px 0;
-  height: 20px;
-  margin-right: 30px;
-  border-radius: 3px;
-  border-style: solid; }
+  header > div.search-cart-login-container > a {
+    display: inline-block;
+    text-decoration: none;
+    color: #777777; }
+  header > div.search-cart-login-container > a.login {
+    font-weight: bold;
+    padding-right: 20px; }
+  header > div.search-cart-login-container > a.cart > img {
+    margin-right: 10px; }
+  header > div.search-cart-login-container > input {
+    height: 20px;
+    margin-right: 30px;
+    border-radius: 3px;
+    border-style: solid; }
 
 nav {
   top: 84px;
@@ -64,34 +58,33 @@ nav {
   position: absolute;
   background-color: #A1DDCA;
   width: 180px;
-  height: calc(100% - 84px);
+  height: calc(100% - 80px - 4px);
   box-sizing: border-box; }
-
-nav > ul {
-  list-style: none;
-  margin-left: 0;
-  padding-left: 1.1em;
-  padding-right: 20px; }
-
-nav > ul > li:before {
-  content: "-";
-  position: absolute;
-  margin-left: -1.1em; }
-
-nav > ul > li > a {
-  text-decoration: none;
-  color: #777; }
+  nav > ul {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 1.1em;
+    padding-right: 20px; }
+    nav > ul > li:before {
+      content: "-";
+      position: absolute;
+      margin-left: -1.1em; }
+    nav > ul > li > a {
+      text-decoration: none;
+      color: #777; }
 
 .content {
   position: absolute;
   top: 84px;
   left: 180px;
-  height: calc(100% - 84px);
+  height: calc(100% - 80px - 4px);
+  width: calc(100% - 180px);
   overflow: scroll; }
 
 .content > ul {
   margin: 0; }
 
+/* Products for view in a list */
 .product-container {
   margin: 30px;
   padding: 10px;
