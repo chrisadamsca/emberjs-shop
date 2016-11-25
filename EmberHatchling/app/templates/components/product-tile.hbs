@@ -1,6 +1,6 @@
 {{yield}}
 <article class="product-container" itemscope itemtype="http://schema.org/Product">
-    <a href="{{product.id}}" title="#" itemprop="url">
+    <a href="/products/{{product.id}}" title="{{product.name}}" itemprop="url">
       <img class="product-image" src={{product.imgUrl}} alt={{product.name}} itemprop="image" />
       <h1 class="product-title" itemprop="name">{{product.name}}</h1>
       <div class="product-description" itemprop="description">
