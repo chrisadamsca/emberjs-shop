@@ -10,7 +10,7 @@ module.exports.getAllProducts = function(req, res) {
 };
 
 module.exports.getProduct = function(id, req, res) {
-    Product.findById(id, function(id, err, product) {
+    Product.findById(id, function(err, product) {
         if (err) {
           res.send(err);
         }
