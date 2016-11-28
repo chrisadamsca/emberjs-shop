@@ -130,7 +130,7 @@ div.rating > p {
   margin: 0; }
 
 /* unused single page*/
-.single-item {
+.single-product-container {
   box-sizing: border-box;
   margin: 30px;
   width: calc(100% - 60px);
@@ -138,58 +138,40 @@ div.rating > p {
   border: 1px solid #DDD;
   overflow: hidden;
   text-align: center;
-  -moz-box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
-  -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
-  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5); }
-
-.single-item-title {
-  position: relative;
-  text-align: left;
-  font-size: 20px;
-  font-weight: 600;
-  height: 20px;
-  padding: 10px 0 10px 0; }
-
-.single-item-image {
-  width: auto;
-  height: 100%;
-  position: relative;
-  float: left;
-  display: inline-block; }
-
-.single-item-description {
-  text-align: left;
-  width: 60%;
-  height: 80px;
-  overflow: hidden;
-  display: block; }
-
-.single-item-rating {
-  float: left;
-  padding-top: 15px;
-  width: 80px;
-  height: 20px; }
-
-.single-item-price-text {
-  float: left;
-  display: inline-block;
-  padding-right: 10px;
-  padding-top: 5px; }
-
-.single-item-price-value {
-  float: left;
-  display: inline-block;
-  font-weight: bold;
-  font-size: 24px; }
-
-.single-item-add-to-cart {
-  background-color: #F9DD85;
-  font-weight: bold;
-  width: 200px;
-  padding: 8px;
-  border-radius: 5px;
-  display: block;
-  float: left; }
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1); }
+  .single-product-container img.product-image {
+    float: left;
+    padding-left: 30px;
+    padding-top: 30px;
+    height: 300px;
+    width: 300px; }
+  .single-product-container h1.product-title {
+    font-size: 24px;
+    font-weight: 600;
+    height: 20px;
+    padding: 10px 0 10px 0; }
+  .single-product-container div.product-description {
+    height: 160px;
+    overflow: hidden; }
+  .single-product-container div.rating {
+    padding-top: 15px;
+    height: 20px; }
+  .single-product-container .single-item-price-text {
+    float: left;
+    display: inline-block;
+    padding-right: 10px;
+    padding-top: 5px; }
+  .single-product-container .single-item-price-value {
+    float: left;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 24px; }
+  .single-product-container button.add-to-cart {
+    background-color: #F9DD85;
+    font-weight: bold;
+    width: 200px;
+    padding: 8px;
+    border-radius: 5px; }
 
 #simm-prod {
   border-top: 3px solid #777;
