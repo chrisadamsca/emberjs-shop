@@ -6,7 +6,7 @@
   <div class="search-cart-login-container">
     <input type="text" name="search" placeholder="Suche">
     {{#link-to "cart" class="cart"}}<img src="/assets/images/cart-icon.svg" alt="cart" />{{/link-to}}
-    <a href="#" class="login">Log In</a>
+    {{#link-to "cart" class="login"}}Log In{{/link-to}}
   </div>
 </header>
 
