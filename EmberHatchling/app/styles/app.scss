@@ -15,6 +15,7 @@ body {
 }
 
 
+
 ul.product-list {
     padding: 0;
 }
@@ -168,7 +169,10 @@ nav {
     text-decoration: none;
     color: #777;
 
-
+    a {
+        text-decoration: inherit;
+        color: inherit;
+    }
 
     .product-title {
         position: relative;
@@ -178,7 +182,6 @@ nav {
         font-weight: 600;
         height: 20px;
         padding: 10px 0 10px 0;
-        text-decoration: none;
         margin: 0;
         text-transform: uppercase;
     }
@@ -223,7 +226,7 @@ nav {
     display: inline-block;
 
     @media screen and (max-width: $small-device-size) {
-        margin:10px;
+        margin: 10px;
         max-width: 100%;
         height: calc(100% - 20px);
         left: 0;
