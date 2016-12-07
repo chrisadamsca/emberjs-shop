@@ -1,5 +1,7 @@
 Cart:
-{{#each cart.items as |item|}}
-derp
-  {{item.title}} -- {{item.cost}}
+<table>
+  <tr><th>name</th><th>preis</th></tr>
+{{#each model as |item|}}
+ <tr><td>{{item.name}}</td><td>{{item.price}}</td></tr> 
 {{/each}}
+</table>
