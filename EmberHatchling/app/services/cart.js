@@ -4,6 +4,7 @@ export default Ember.Service.extend({
   items: null,
 
   init() {
+    this._super(...arguments);
     this.set('items', []);
   },
 
