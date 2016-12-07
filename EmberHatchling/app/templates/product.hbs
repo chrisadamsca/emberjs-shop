@@ -1,5 +1,3 @@
-{{outlet}}
-
 <article class="single-product-container" itemscope itemtype="http://schema.org/Product">
   <div class="col-1">
     <img class="product-image" src={{model.imgUrl}} alt={{model.name}} itemprop="image" />
@@ -17,10 +15,11 @@
         <span class="price" itemprop="price">{{model.price}}</span>
         <span class="availability" itemprop="availability"><br>In stock!</span>
     </div>
-    <button class="add-to-cart" type="button" name="add-to-cart">In den Warenkorb<span>+</span></button>
+    <button class="add-to-cart" type="button" name="add-to-cart" {{action "add" model}}>In den Warenkorb<span>+</span></button>
   </div>
 </article>
 
+<!-- this won't work with this route
 <div class="similar-product-list-container">
   <ul class="similar-product-list">
   {{#each model as |product|}}
@@ -30,4 +29,4 @@
     </li>
   {{/each}}
   </ul>
-</div>
+</div>-->
