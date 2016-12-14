@@ -8,8 +8,16 @@ export default Ember.Service.extend({
     this.set('items', []);
   },
 
-  add(item) {
-    this.get('items').pushObject(item);
+  add(newItem) {
+    for(var i=0; i<this.get('items').length; i++){
+      if(this.get('items')[i].id === newItem.id){
+        this.get('items')[i].quantity++;
+        return;
+      } 
+    }
+    newItem.quantity = 1;
+    console.log(newItem.quantity);
+    this.get('items').pushObject(newItem);
   },
 
   remove(item) {
