@@ -2,8 +2,6 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model(){
-    return this.get('store').query('product', {filter: {
-      size: 'M'
-    }});
+    return this.get('store').query('product', {gender: 'boys'});
   }
 });
