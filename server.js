@@ -1,7 +1,12 @@
 //modules
 var express = require('express');
+var logger = require('./logger.js');
 var app = express();
 var bodyParser     = require('body-parser');
+
+logger.log("####################################");
+logger.log("##           Initialized          ##");
+logger.log("####################################");
 
 //set the port
 var port = process.env.PORT || 3000;

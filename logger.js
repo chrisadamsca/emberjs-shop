@@ -2,8 +2,8 @@ const fs = require('fs');
 var logger = 
 {
     log : "",
-    logFile : "logfile.log",
-    logErr : function logErr( err)
+    logFile : "",
+    logErr : function( err)
     {
 
         var stack = new Error(err).stack.split("\n");
@@ -16,13 +16,17 @@ var logger =
             this.appendToLog( stack[i]+"\n");
         }
     },
-    logWarn : function logErr( warn)
+    logWarn : function ( warn)
     {
         this.appendToLog( this.logDate() + " | Warning: ");
                
         this.appendToLog( warn+"\n");
     },
-    logDebug : function logErr( debug)
+    log : function ( log)
+    {               
+        this.appendToLog( log+"\n");
+    },
+    logDebug : function ( debug)
     {
         this.appendToLog( this.logDate() + " | Debug: ");
                
