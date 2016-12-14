@@ -15,11 +15,9 @@ export default Ember.Service.extend({
         return;
       } 
     }
-    console.log("else");
     newItem.quantity = 1;
     console.log(newItem.quantity);
     this.get('items').pushObject(newItem);
-    console.log( this.get('items')[0].quantity);
   },
 
   remove(item) {
