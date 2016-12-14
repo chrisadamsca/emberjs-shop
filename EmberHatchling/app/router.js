@@ -12,7 +12,10 @@ Router.map(function() {
   this.route('product', {path: 'products/:product_id'});
   this.route('cart');
   this.route('boys');
+  this.route('boy-cat', {path: 'boys/:cat_name'});
+  this.route('girl-cat', {path: 'girls/:cat_name'});
   this.route('catchall', {path: '/*wildcard'});
+  this.route('girls');
 });
 
 export default Router;
