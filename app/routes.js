@@ -10,7 +10,6 @@ module.exports = function(router) {
     })
     .get(function(req,res) {
       if(req.query.name && req.query.gender){
-        logger.log('name');
         products.getByCategory(req.query.gender, req.query.name, req, res);
         return;
       }
