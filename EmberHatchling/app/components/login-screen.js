@@ -2,15 +2,13 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
 
-  authManager: Ember.inject.service(),
+  session: Ember.inject.service('session'),
 
   actions: {
     authenticate() {
-      const { login, password } = this.getProperties('login', 'password');
-      this.get('authManager').authenticate(login, password).then(() => {
-        alert('Success! Click the top link!');
-      }, (err) => {
-        alert('Error obtaining token: ' + err.responseText);
+      let { identification, password } = this.getProperties('identification', 'password');
+      this.get('session').authenticate('authenticator:oauth2', identification, password).catch((reason) => {
+        this.set('errorMessage', reason.error || reason);
       });
     }
   }

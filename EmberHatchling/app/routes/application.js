@@ -1,12 +1,4 @@
 import Ember from 'ember';
+import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mixin';
 
-
-export default Ember.Route.extend({
-  /*cart: Ember.inject.service(),
-  actions: {
-  	add(item){
-  		this.get('cart').add(item);
-  	}
-  }
-  */
-});
+export default Ember.Route.extend(ApplicationRouteMixin);

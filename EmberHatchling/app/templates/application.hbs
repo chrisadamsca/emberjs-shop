@@ -6,7 +6,11 @@
   <div class="search-cart-login-container">
     <input type="text" name="search" placeholder="Suche">
     {{#link-to "cart" class="cart"}}<img src="/assets/images/cart-icon.svg" alt="cart" />{{/link-to}}
-    {{#link-to "login" class="login"}}Log In{{/link-to}}
+    {{#if session.isAuthenticated}}
+      <a {{action 'logout'}}>Logout</a>
+    {{else}}
+      {{#link-to "login" class="login"}}Log In{{/link-to}}
+    {{/if}}
   </div>
 </header>
 

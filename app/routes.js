@@ -26,6 +26,15 @@ module.exports = function(router) {
   		products.getByCategory(req.params.gender, req.params.cat, req, res);
   	});
 
+  router.route('/token')
+    .post(function(req, res) {
+      if (req.body.username == 'login' && req.body.password == 'ok') {
+        res.send({ access_token: "some bs" });
+      } else {
+        res.status(400).send({ error: "Username oder Passwort sind falsch" });
+      }
+    });
+
   router.route('*').get(function(req, res) {
     res.sendfile('./public/index.html');
   });

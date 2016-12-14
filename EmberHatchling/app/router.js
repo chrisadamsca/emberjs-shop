@@ -7,10 +7,10 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('login');
   this.route('products');
   this.route('product', {path: 'products/:product_id'});
   this.route('cart');
-  this.route('login');
   this.route('boys');
   this.route('catchall', {path: '/*wildcard'});
 });
