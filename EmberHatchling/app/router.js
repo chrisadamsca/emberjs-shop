@@ -12,6 +12,7 @@ Router.map(function() {
   this.route('cart');
   this.route('login');
   this.route('boys');
+  this.route('catchall', {path: '/*wildcard'});
 });
 
 export default Router;
