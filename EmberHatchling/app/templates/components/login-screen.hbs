@@ -3,7 +3,12 @@
 <h2>Login page</h2>
 
 <form {{action 'authenticate' on='submit'}}>
-  {{input value=login placeholder='Login'}}<br>
-  {{input value=password placeholder='Password' type='password'}}<br>
+  <label for="identification">Login</label>
+  {{input id='identification' placeholder='Enter Login' value=identification}}
+  <label for="password">Password</label>
+  {{input id='password' placeholder='Enter Password' type='password' value=password}}
   <button type="submit">Login</button>
+  {{#if errorMessage}}
+    <p>{{errorMessage}}</p>
+  {{/if}}
 </form>
