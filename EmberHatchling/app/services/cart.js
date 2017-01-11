@@ -42,7 +42,6 @@ export default Ember.Service.extend({
       })
       this.transitionTo('/');
 
-  },
+  }
 
-}
 });
