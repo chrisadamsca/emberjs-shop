@@ -29,6 +29,12 @@ module.exports = function(router) {
   	.get(function(req,res) {
   		products.getByCategory(req.params.gender, req.params.cat, req, res);
   	});
+    
+    router.route('/api/buy')
+    .post(function(req, res) {
+		  logger.log(JSON.stringify(req.body));
+      res.send(req.body);
+    });
 
   router.route('/token')
     .post(function(req, res) {
