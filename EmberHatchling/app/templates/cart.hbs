@@ -6,5 +6,5 @@ Cart:
 {{/each}}
   <tr><td>Summe:</td><td>{{model.sum}}</td><td></td></tr> 
 </table>
-
-<button class="order" type="button" name="order" {{action "order" model}}>Jetzt kostenpflichtig bestellen</button>
+{{#cart-order model=model}}
+{{/cart-order}}

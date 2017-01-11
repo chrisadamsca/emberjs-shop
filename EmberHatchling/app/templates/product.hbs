@@ -1,36 +1,4 @@
 
 {{#single-product model=model}}
   {{/single-product}}
-<!-- 
-  <article class="single-product-container" itemscope itemtype="http://schema.org/Product">
-  <div class="col-1">
-    <img class="product-image" src={{model.imgUrl}} alt={{model.name}} itemprop="image" />
-  </div>
 
-  <div class="col-2">
-    <h1 class="product-title" itemprop="name">{{model.name}}</h1>
-    <div class="rating" itemscope itemtype="http://schema.org/AggregateRating">
-        <p>Rating: <span itemprop="ratingValue">{{model.rating}}</span>/<span itemprop="bestRating">5</span></p>
-    </div>
-    <div class="product-description" itemprop="description">
-        <p>{{model.description}}</p>
-    </div>
-    <div class="offer" itemscope itemtype="http://schema.org/Offer">
-        <span class="price" itemprop="price">{{model.price}}</span>
-        <span class="availability" itemprop="availability"><br>In stock!</span>
-    </div>
-    <button class="add-to-cart" type="button" name="add-to-cart" {{action "add" model}}>In den Warenkorb<span>+</span></button>
-  </div>
-</article>
-
-<!-- this won't work with this route
-<div class="similar-product-list-container">
-  <ul class="similar-product-list">
-  {{#each model as |product|}}
-    <li>
-      {{#product-tile product=product}}
-      {{/product-tile}}
-    </li>
-  {{/each}}
-  </ul>
-</div>-->
