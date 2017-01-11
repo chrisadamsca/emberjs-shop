@@ -1,5 +1,6 @@
 var products = require('../api/product');
-var logger = require('../logger.js')
+var users = require('../api/user');
+var logger = require('../logger.js');
 
 module.exports = function(router) {
 
@@ -38,11 +39,19 @@ module.exports = function(router) {
 
   router.route('/token')
     .post(function(req, res) {
-      if (req.body.username == 'login' && req.body.password == 'ok') {
-        res.send({ access_token: "some bs" });
-      } else {
-        res.status(400).send({ error: "Username oder Passwort sind falsch" });
-      }
+      users.getUser(req.body.username, req.body.password, req, res);
+
+
+    });
+
+
+  router.route('/api/user')
+    .post(function(req, res) {
+			console.log(req.body);
+      users.addUser(req,res);
+    });
+    router.route('/api/user/:email/:password').get(function(req,res) {
+      users.getUser(req.params.email, req.params.password, req, res);
     });
 
   router.route('*').get(function(req, res) {

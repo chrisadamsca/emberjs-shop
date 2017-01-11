@@ -3,10 +3,10 @@
 <h2>Login page</h2>
 
 <form {{action 'authenticate' on='submit'}}>
-  <label for="identification">Login</label>
-  {{input id='identification' placeholder='Enter Login' value=identification}}
+  <label for="identification">E-Mail</label>
+  {{input id='identification' placeholder='Enter E-Mail' value=identification}}<br>
   <label for="password">Password</label>
-  {{input id='password' placeholder='Enter Password' type='password' value=password}}
+  {{input id='password' placeholder='Enter Password' type='password' value=password}}<br>
   <button type="submit">Login</button>
   {{#if errorMessage}}
     <p>{{errorMessage}}</p>
