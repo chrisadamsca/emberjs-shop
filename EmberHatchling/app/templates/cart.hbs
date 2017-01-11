@@ -2,8 +2,9 @@ Cart:
 <table>
   <tr><th>Artikel</th><th>Preis</th><th>Stückzahl</th></tr>
 {{#each model.items as |item|}}
- <tr><td>{{item.name}}</td><td>{{item.price}}</td><td>{{item.quantity}}</td></tr> 
+  <tr><td>{{item.name}}</td><td>{{item.price}}</td><td>{{item.quantity}}</td></tr> 
 {{/each}}
- <tr><td>Summe:</td><td>{{model.sum}}</td><td></td></tr> 
-
+  <tr><td>Summe:</td><td>{{model.sum}}</td><td></td></tr> 
 </table>
+
+<button class="order" type="button" name="order" {{action "order" model}}>Jetzt kostenpflichtig bestellen</button>
