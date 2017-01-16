@@ -1,5 +1,6 @@
 var products = require('../api/product');
 var users = require('../api/user');
+var orders = require('../api/order');
 var logger = require('../logger.js');
 
 module.exports = function(router) {
@@ -30,18 +31,17 @@ module.exports = function(router) {
   	.get(function(req,res) {
   		products.getByCategory(req.params.gender, req.params.cat, req, res);
   	});
-    
+
     router.route('/api/buy')
     .post(function(req, res) {
+      orders.addOrder(req,res);
 		  logger.log(JSON.stringify(req.body));
       res.send(req.body);
     });
 
-  router.route('/token')
+  router.route('/api/token')
     .post(function(req, res) {
       users.getUser(req.body.username, req.body.password, req, res);
-
-
     });
 
 
@@ -54,8 +54,10 @@ module.exports = function(router) {
       users.getUser(req.params.email, req.params.password, req, res);
     });
 
+
   router.route('*').get(function(req, res) {
     res.sendfile('./public/index.html');
   });
+
 
 };

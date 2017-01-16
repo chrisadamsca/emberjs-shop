@@ -16,7 +16,7 @@ export default Ember.Service.extend({
       if(this.get('items')[i].id === newItem.id){
         this.get('items')[i].quantity++;
         return;
-      } 
+      }
     }
     newItem.quantity = 1;
     console.log(newItem.quantity);
