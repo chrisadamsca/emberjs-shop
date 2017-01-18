@@ -33,11 +33,6 @@ module.exports = function(router) {
 			products.getProduct(req.params.product_id, req, res);
 		});
 
-  // router.route('/api/products/category/:gender/:cat')
-  // 	.get(function(req,res) {
-  // 		products.getByCategory(req.params.gender, req.params.cat, req, res);
-  // 	});
-
 // Bestellungen
   router.route('/api/buy')
   .post(function(req, res) {
@@ -59,11 +54,6 @@ module.exports = function(router) {
 			console.log(req.body);
       users.addUser(req,res);
     });
-
-  // router.route('/api/user/:email/:password')
-  //   .get(function(req,res) {
-  //     users.getUser(req.params.email, req.params.password, req, res);
-  //   });
 
 
   router.route('*').get(function(req, res) {

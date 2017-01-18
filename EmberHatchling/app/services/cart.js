@@ -29,17 +29,6 @@ export default Ember.Service.extend({
 
   empty() {
     this.get('items').clear();
-  },
-
-  ordernow() {
-    console.log(this.get('items').getProperties('id'));
-    //names: Ember.computed.mapBy('items', 'name'),
-
-    // $.ajax({
-    //     type: "POST",
-    //     url: "/api/buy",
-    //     data: items
-    //   });
   }
 
 });
