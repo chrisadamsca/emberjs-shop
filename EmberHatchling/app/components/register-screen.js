@@ -20,12 +20,12 @@ export default Ember.Component.extend({
 
       $.post("/api/user", {
         user: formData
-      }).then(function() {
+      }).then(function(data) {
         that.get('session').authenticate('authenticator:oauth2', formData.email, formData.password).catch((reason) => {
           that.set('errorMessage', reason.error || reason);
         });
-      }, function() {
-        this.set("loginFailed", true);
+      }, function(data) {
+        $('#error').text(data.responseText);
       }.bind(this));
     }
   }

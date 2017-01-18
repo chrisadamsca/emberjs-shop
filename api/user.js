@@ -9,7 +9,7 @@ module.exports.addUser = function(req,res) {
   var data = req.body.user;
   return User.find({ 'email': data.email }, function(err, user) {
       if (err) {
-        res.send(err);
+        res.status(500);
         logger.logWarn("Connection Error");
         return;
       }
@@ -30,7 +30,9 @@ module.exports.addUser = function(req,res) {
         });
         return;
       }
+      res.status(409).send("User with email " + data.email + " already exists");
       logger.logWarn("User with email " + data.email + " already exists");
+      return;
   });
 
 };
