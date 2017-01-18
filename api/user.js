@@ -6,21 +6,33 @@ const saltRounds = 10;
 
 // Fügt einen Benutzer hinzu
 module.exports.addUser = function(req,res) {
-    // Passwort Verschlüsselung
-    var data = req.body.user;
-    data.password = bcrypt.hashSync(data.password, saltRounds);
+  var data = req.body.user;
+  return User.find({ 'email': data.email }, function(err, user) {
+      if (err) {
+        res.send(err);
+        logger.logWarn("Connection Error");
+        return;
+      }
+      if (user === undefined || user.length == 0) {
+        // Passwort Verschlüsselung
+        data.password = bcrypt.hashSync(data.password, saltRounds);
 
-    // Speichere neuen Benutzer in die Datenbank
-    var user = new User(data);
-    user.save(function(err) {
-        if (err) {
-          res.send(err);
-          logger.logWarn("User couldn't be added");
-          return;
-        }
-        logger.log("User " + data.email + " added");
-        res.json({user: user});
-    });
+        // Speichere neuen Benutzer in die Datenbank
+        var newUser = new User(data);
+        newUser.save(function(err) {
+            if (err) {
+              res.send(err);
+              logger.logWarn("User couldn't be added");
+              return;
+            }
+            logger.log("User " + data.email + " added");
+            res.json({user: newUser});
+        });
+        return;
+      }
+      logger.logWarn("User with email " + data.email + " already exists");
+  });
+
 };
 
 // Findet einen bestimmten User durch seine E-Mail
