@@ -42,8 +42,8 @@ module.exports = function(router) {
   router.route('/api/buy')
   .post(function(req, res) {
     orders.addOrder(req,res);
-	  logger.log(JSON.stringify(req.body));
-    res.send(req.body);
+	  logger.log(req.body.data);
+    // res.send(req.body);
   });
 
 // Anmeldung

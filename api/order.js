@@ -3,7 +3,8 @@ var logger =  require('../logger.js');
 
 // Speichert eine Order in der Datenbank
 module.exports.addOrder = function(req,res) {
-    var order = new Order(req.body.order);
+    data = JSON.parse(req.body.data);
+    var order = new Order(data);
     order.save(function(err) {
         if (err) {
           res.send(err);

@@ -31,13 +31,15 @@ export default Ember.Service.extend({
     this.get('items').clear();
   },
 
-  order(items) {
+  ordernow() {
+    console.log(this.get('items').getProperties('id'));
     //names: Ember.computed.mapBy('items', 'name'),
-    $.ajax({
-        type: "POST",
-        url: "/api/buy",
-        data: items
-      });
+
+    // $.ajax({
+    //     type: "POST",
+    //     url: "/api/buy",
+    //     data: items
+    //   });
   }
 
 });
