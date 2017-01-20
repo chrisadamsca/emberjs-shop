@@ -1,12 +1,12 @@
 <header>
   <div class="logo-container">
-    {{#link-to 'products' }}<img class="logo-img" src="/assets/images/hatchling-logo.svg" alt="hatchling-logo" />{{/link-to}}
+    {{#link-to 'products' class="logo-link"}}<img class="logo-img" src="/assets/images/hatchling-logo.svg" alt="hatchling-logo" />{{/link-to}}
   </div>
 
   <div class="search-cart-login-container">
     {{#link-to "cart" class="cart"}}<img src="/assets/images/cart-icon.svg" alt="cart" />{{/link-to}}
     {{#if session.isAuthenticated}}
-      <a {{action 'logout'}}>Logout</a>
+      <a class="login" {{action 'logout'}}>Logout</a>
     {{else}}
       {{#link-to "login" class="login"}}Log In{{/link-to}}
       {{#link-to "register" class="login"}}Register{{/link-to}}
