@@ -73,6 +73,7 @@ header > div.search-cart-login-container {
     border-radius: 3px;
     border-style: solid; }
   header > div.search-cart-login-container div.cart-sum {
+    pointer-events: none;
     margin-left: -20px;
     margin-top: -22px;
     display: block;
@@ -140,6 +141,14 @@ nav {
 
 .content > ul {
   margin: 0; }
+
+a.login-cart > button {
+  text-decoration: none;
+  background-color: #F9DD85;
+  font-weight: bold;
+  width: 200px;
+  padding: 8px;
+  border-radius: 5px; }
 
 /* Products for view in a list */
 .product-container {

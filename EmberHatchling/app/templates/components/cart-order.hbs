@@ -1,2 +1,6 @@
-<!-- df029 -->
-<button class="order" type="button" name="order" {{action "order" model.items}}>Jetzt kostenpflichtig bestellen</button>
+<!-- nk078, df029 -->
+    {{#if session.isAuthenticated}}
+        <button class="order" type="button" name="order" {{action "order" model.items}}>Jetzt kostenpflichtig bestellen</button>
+    {{else}}
+      {{#link-to "login" class="login-cart"}}<button>Jetzt kostenpflichtig bestellen</button>{{/link-to}}
+    {{/if}}
