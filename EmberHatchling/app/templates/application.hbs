@@ -7,9 +7,11 @@
 
   <div class="search-cart-login-container">
     {{#link-to "cart" class="cart"}}<img src="/assets/images/cart-icon.svg" alt="cart" />{{/link-to}}
-    <div class="cart-sum">
-      {{model.itemCount}}
-    </div>
+    {{#if model.itemCount }}
+      <div class="cart-sum">
+        {{model.itemCount}}
+      </div>
+    {{/if}}
     {{#if session.isAuthenticated}}
       <a class="login" {{action 'logout'}}>Logout</a>
     {{else}}
