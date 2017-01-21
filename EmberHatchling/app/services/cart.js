@@ -29,7 +29,23 @@ export default Ember.Service.extend({
   },
 
   remove(item) {
-    this.get('items').removeObject(item);
+    this.set('totalPrice', this.get('totalPrice') - item.get("price"));
+    this.set('itemCount', this.get('itemCount') - 1);
+    item.set('quantity', item.get('quantity')-1);
+
+    if(item.get('quantity') > 0) {
+
+    }else{
+      this.get('items').removeObject(item);
+    }
+
+
+  },
+
+  addItem(item) {
+    this.set('totalPrice', this.get('totalPrice') + item.get("price"));
+    this.set('itemCount', this.get('itemCount') + 1);
+    item.set('quantity', item.get('quantity') + 1);
   },
 
   empty() {

@@ -7,5 +7,13 @@ export default Ember.Route.extend({
 		const cart = this.get('cart');
 		return cart;
 	},
+	actions: {
+    removeFromCart(item) {
+      this.get('cart').remove(item);
+    },
+		addToCart(item) {
+			this.get('cart').addItem(item);
+		}
+  },
 	cart: Ember.inject.service()
 });
