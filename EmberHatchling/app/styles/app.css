@@ -1,3 +1,4 @@
+/* nk078 */
 @import url("http://fonts.googleapis.com/css?family=Rubik");
 body {
   color: #777777;
@@ -71,6 +72,15 @@ header > div.search-cart-login-container {
     margin-right: 30px;
     border-radius: 3px;
     border-style: solid; }
+  header > div.search-cart-login-container div.cart-sum {
+    margin-left: -20px;
+    margin-top: -22px;
+    display: block;
+    background-color: red;
+    border-radius: 50%;
+    padding: 4px 6px;
+    color: white;
+    font-size: 12px; }
 
 nav {
   top: 84px;
@@ -240,7 +250,10 @@ nav {
     .single-product-container div.col-2 div.rating {
       padding-top: 15px;
       height: 20px; }
+    .single-product-container div.col-2 span.price {
+      font-size: 22px; }
     .single-product-container div.col-2 button.add-to-cart {
+      margin-top: 10px;
       background-color: #F9DD85;
       font-weight: bold;
       width: 200px;

@@ -14,8 +14,8 @@
         <p>{{model.description}}</p>
     </div>
     <div class="offer" itemscope itemtype="http://schema.org/Offer">
-        <span class="price" itemprop="price">{{model.price}}</span>
-        <span class="availability" itemprop="availability"><br>In stock!</span>
+        <span class="price" itemprop="price">{{model.price}}€</span>
+        
     </div>
     <button class="add-to-cart" type="button" name="add-to-cart" {{action "addToCart" model}}>In den Warenkorb<span>+</span></button>
   </div>

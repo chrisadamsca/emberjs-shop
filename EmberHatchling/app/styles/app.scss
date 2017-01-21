@@ -111,6 +111,16 @@ header > div.search-cart-login-container {
         border-radius: 3px;
         border-style: solid;
     }
+    div.cart-sum{
+        margin-left:-20px;
+        margin-top:-22px;
+        display:block;
+        background-color:red;
+        border-radius:50%;
+        padding:4px 6px;
+        color:white;
+        font-size:12px;
+    }
 }
 
 nav {
@@ -335,8 +345,13 @@ nav {
             height: 20px;
         }
 
+        span.price {
+            font-size:22px;
+        }
+
 
         button.add-to-cart {
+            margin-top:10px;
             background-color: $theme-yellow;
             font-weight: bold;
             width: 200px;
