@@ -19,6 +19,7 @@ Router.map(function() {
   this.route('catchall', {path: '/*wildcard'});
   this.route('girls');
   this.route('register');
+  this.route('orderconfirmation');
 });
 
 export default Router;
