@@ -1,8 +1,9 @@
+<!-- df029, nk078, an034 -->
+
 {{yield}}
 <article class="product-container" itemscope itemtype="http://schema.org/Product">
    {{#link-to "product" product }}
 
-    <!--a href="/products/{{product.id}}" title="{{product.name}}" itemprop="url"-->
       <img class="product-image" src={{product.imgUrl}} alt={{product.name}} itemprop="image" />
       <h1 class="product-title" itemprop="name">{{product.name}}</h1>
       <div class="product-description" itemprop="description">
@@ -15,6 +16,6 @@
           <span class="price" itemprop="price">{{product.price}}</span>
           <span class="availability" itemprop="availability"><br>In stock!</span>
       </div>
- 
+
         {{/link-to}}
 </article>

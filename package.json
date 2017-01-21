@@ -27,5 +27,8 @@
   "dependencies": {
     "bcrypt": "^1.0.2",
     "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "validator": "^6.2.1"
   }
 }

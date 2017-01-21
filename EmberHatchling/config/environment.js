@@ -23,9 +23,9 @@ module.exports = function(environment) {
     }
   };
 
-  ENV['ember-simple-auth'] = {
-    routeAfterAuthentication:    'products'
-  };
+  // ENV['ember-simple-auth'] = {
+  //   routeAfterAuthentication:    '/'
+  // };
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;

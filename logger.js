@@ -1,5 +1,7 @@
+/* nk078 */
+
 const fs = require('fs');
-var logger = 
+var logger =
 {
     log : "",
     logFile : "",
@@ -12,24 +14,24 @@ var logger =
         this.appendToLog( stack[0]+"\n");
 
         for(var i = 2; i < stack.length && !stack[i].includes("at Module._compile");i++)
-        {            
+        {
             this.appendToLog( stack[i]+"\n");
         }
     },
     logWarn : function ( warn)
     {
         this.appendToLog( this.logDate() + " | Warning: ");
-               
+
         this.appendToLog( warn+"\n");
     },
     log : function ( log)
-    {               
+    {
         this.appendToLog( log+"\n");
     },
     logDebug : function ( debug)
     {
         this.appendToLog( this.logDate() + " | Debug: ");
-               
+
         this.appendToLog(  debug+"\n");
     },
     logDate : function()

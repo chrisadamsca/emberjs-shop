@@ -1,3 +1,5 @@
+/* ca033 */
+
 var User = require('../models/user');
 var logger =  require('../logger.js');
 var bcrypt = require('bcrypt');
@@ -7,6 +9,13 @@ const saltRounds = 10;
 // Fügt einen Benutzer hinzu
 module.exports.addUser = function(req,res) {
   var data = req.body.user;
+
+  if(data === undefined || data.length == 0){
+    res.status(409).send("Es wurden keine Daten gesendet");
+    logger.logWarn("No Data was sent from registration");
+    return;
+  }
+
   return User.find({ 'email': data.email }, function(err, user) {
       if (err) {
         res.status(500);
@@ -30,8 +39,8 @@ module.exports.addUser = function(req,res) {
         });
         return;
       }
-      res.status(409).send("User with email " + data.email + " already exists");
-      logger.logWarn("User with email " + data.email + " already exists");
+      res.status(409).send("Diese E-Mail-Adresse ist bereits registriert");
+      logger.logWarn("User tried to register with already existing email");
       return;
   });
 
@@ -49,12 +58,12 @@ module.exports.loginUser = function(email, password, req, res) {
         }
         if (user === undefined || user.length == 0) {
           logger.logWarn("No User with email " + email + " found");
-          res.status(400).send('{"error": "No User with email ' + email + ' found"}');
+          res.status(400).send('{"error": "No User with email and provided password found"}');
           return;
         }
         if(!bcrypt.compareSync(password, user[0].password)){
           logger.logWarn("No User with email " + email + " and provided password found");
-          res.status(400).send('{"error": "No User with email ' + email + ' and provided password found"}');
+          res.status(400).send('{"error": "No User with email and provided password found"}');
           return;
         }
 

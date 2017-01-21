@@ -1,4 +1,5 @@
-//Darja Ferber
+/* df029 */
+
 import Ember from 'ember';
 
 export default Ember.Component.extend({
