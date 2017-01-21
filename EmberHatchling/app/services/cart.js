@@ -1,11 +1,11 @@
-/* df029, nk078 */
+/* df029, nk078, ca033 */
 
 import Ember from 'ember';
 
 export default Ember.Service.extend({
   items: null,
-  prices: Ember.computed.mapBy('items', 'price'),
-  sum: Ember.computed.sum('prices'),
+  totalPrice: 0,
+  itemCount: 0,
 
   init() {
     this._super(...arguments);
@@ -13,16 +13,19 @@ export default Ember.Service.extend({
   },
 
   add(newItem) {
+    this.set('totalPrice', this.get('totalPrice') + newItem.get('price'));
+    this.set('itemCount', this.get('itemCount') + 1);
+
     for(var i=0; i<this.get('items').length; i++){
       if(this.get('items')[i].id === newItem.id){
         this.get('items')[i].quantity++;
-        this.get('prices').push(this.get('items')[i].get('price'));
         return;
       }
     }
+
     newItem.quantity = 1;
-    console.log(newItem.quantity);
     this.get('items').pushObject(newItem);
+
   },
 
   remove(item) {

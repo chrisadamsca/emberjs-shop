@@ -7,5 +7,10 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
   sessionAuthenticated: function() {
     this.transitionTo('/');
     console.log("auth success!");
-  }
+  },
+  model(){
+		const cart = this.get('cart');
+		return cart;
+	},
+  cart: Ember.inject.service()
 });
