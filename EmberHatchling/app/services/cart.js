@@ -6,6 +6,7 @@ export default Ember.Service.extend({
   items: null,
   totalPrice: 0,
   itemCount: 0,
+  routing: Ember.inject.service('-routing'),
 
   init() {
     this._super(...arguments);
@@ -34,6 +35,10 @@ export default Ember.Service.extend({
 
     if(item.get('quantity') <= 0) {
       this.get('items').removeObject(item);
+    }
+
+    if(this.get('itemCount') <= 0) {
+      this.get("routing").transitionTo("products");
     }
   },
   addItem(item) {

@@ -6,7 +6,7 @@
 {{#each model.items as |item|}}
   <tr><td>{{item.name}}</td><td>{{item.price}}</td><td>{{item.quantity}}</td><td><button class="add" type="button" name="add" {{action "addToCart" item}}>+</button><button class="remove" type="button" name="remove" {{action "removeFromCart" item}}>-</button></td></tr>
 {{/each}}
-  <tr><td>Summe:</td><td>{{model.totalPrice}}</td><td></td></tr>
+  <tr><td>Summe:</td><td>{{model.totalPrice}}</td><td></td><td></td></tr>
 </table>
 {{#cart-order model=model}}
 {{/cart-order}}
