@@ -23,12 +23,12 @@ export default Ember.Component.extend({
 
       $.post("/api/user", {
         user: formData
-      }).then(function(data) {
+      }).then(function() {
         that.get('session').authenticate('authenticator:oauth2', formData.email, formData.password).catch((reason) => {
           that.set('errorMessage', reason.error || reason);
         });
-      }, function(data) {
-        $('#error').text(data.responseText);
+      }, function(res) {
+        $('#error').text(res.responseText);
       }.bind(this));
     }
   }
