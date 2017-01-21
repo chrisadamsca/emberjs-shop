@@ -3,10 +3,10 @@
 import Ember from 'ember';
 
 export default Ember.Service.extend({
+  routing: Ember.inject.service('-routing'),
   items: null,
   totalPrice: 0,
   itemCount: 0,
-  routing: Ember.inject.service('-routing'),
 
   init() {
     this._super(...arguments);
@@ -49,6 +49,8 @@ export default Ember.Service.extend({
 
   empty() {
     this.get('items').clear();
+    this.set('totalPrice', 0);
+    this.set('itemCount', 0);
   }
 
 });

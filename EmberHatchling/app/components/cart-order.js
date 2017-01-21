@@ -6,6 +6,7 @@ export default Ember.Component.extend({
     store: Ember.inject.service(),
     session: Ember.inject.service('session'),
     routing: Ember.inject.service('-routing'),
+    cart: Ember.inject.service(),
 
     actions: {
     order(items) {
@@ -24,6 +25,7 @@ export default Ember.Component.extend({
 	        data: JSON.stringify(order)
 	    });
 
+	    this.get("cart").empty();
 	    this.get("routing").transitionTo("orderconfirmation");
     }
   }
