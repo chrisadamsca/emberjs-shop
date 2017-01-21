@@ -1,20 +1,22 @@
+<!-- an034, ca033 -->
+
 {{yield}}
 
-<h2>Register</h2>
+<h1>Register</h1>
 
 <form class="register-form" {{action 'register' on='submit'}}>
   <label for="name">Name</label>
-  {{input id='name' placeholder='Enter Name' value=name required=false}}<br>
+  {{input id='name' placeholder='Enter Name' value=name required=true}}<br>
   <label for="surname">Surname</label>
-  {{input id='surname' placeholder='Enter Surname' value=surname required=false}}<br>
+  {{input id='surname' placeholder='Enter Surname' value=surname required=true}}<br>
   <label for="address">Address</label>
-  {{textarea id='address' placeholder='Enter Address' value=address required=false}}<br>
+  {{textarea id='address' placeholder='Enter Address' value=address required=true}}<br>
   <label for="email">E-Mail</label>
-  {{input id='email' placeholder='Enter E-Mail' value=email required=false}}<br>
+  {{input id='email' placeholder='Enter E-Mail' value=email required=true}}<br>
   <label for="password">Enter Password</label>
-  {{input id='password' placeholder='Enter Password' type='password' value=password required=false}}<br>
+  {{input id='password' placeholder='Enter Password' type='password' value=password required=true}}<br>
   <label for="re-password">Re-Enter Password</label>
-  {{input id='re-password' placeholder='Re-Enter Password' type='password' value=re-password required=false}}<br>
+  {{input id='re-password' placeholder='Re-Enter Password' type='password' value=re-password required=true}}<br>
   <button type="submit">Register</button>
 </form>
 

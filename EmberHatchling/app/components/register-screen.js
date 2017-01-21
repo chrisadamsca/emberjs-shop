@@ -1,4 +1,6 @@
-import Ember from 'ember';
+/* an034, ca033 */
+
+import Ember from  'ember';
 
 export default Ember.Component.extend({
 
@@ -10,13 +12,14 @@ export default Ember.Component.extend({
       if(this.get("password") !== this.get("re-password")){
         return;
       }
+
       var formData = {
           "name":this.get("name"),
           "surname":this.get("surname"),
           "email":this.get("email"),
           "password":this.get("password"),
           "address":this.get("address")
-      }
+      };
 
       $.post("/api/user", {
         user: formData
