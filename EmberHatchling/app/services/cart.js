@@ -16,6 +16,7 @@ export default Ember.Service.extend({
     for(var i=0; i<this.get('items').length; i++){
       if(this.get('items')[i].id === newItem.id){
         this.get('items')[i].quantity++;
+        this.get('prices').push(this.get('items')[i].get('price'));
         return;
       }
     }
