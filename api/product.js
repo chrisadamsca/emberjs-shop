@@ -7,7 +7,6 @@ var logger =  require('../logger.js');
 module.exports.getAllProducts = function(req, res) {
     Product.find(function(err, products) {
         if (err) {
-            res.send(err);
           logger.logWarn("Accessing product that does not exist");
           return;
         }

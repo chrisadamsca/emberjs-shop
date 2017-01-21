@@ -40,7 +40,6 @@ module.exports = function(router) {
   .post(function(req, res) {
     orders.addOrder(req,res);
 	  logger.log(req.body.data);
-    // res.send(req.body);
   });
 
 // Anmeldung
