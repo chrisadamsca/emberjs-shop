@@ -1,4 +1,5 @@
 <!-- nk078, df029 -->
+<!-- Go to order if user is logged in, otherwise go to login page -->
     {{#if session.isAuthenticated}}
         <button class="order" type="button" name="order" {{action "order" model.items}}>Jetzt kostenpflichtig bestellen</button>
     {{else}}
