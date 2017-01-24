@@ -13,9 +13,5 @@ export default Ember.Component.extend({
         this.set('errorMessage', reason.error || reason);
       });
     }
-  },
-
-  sessionAuthenticated: function() {
-    console.log("auth success!");
   }
 });

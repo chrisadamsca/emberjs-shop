@@ -2,8 +2,12 @@
 
 import Ember from 'ember';
 
-export default Ember.Controller.extend({
-  session: Ember.inject.service('session'),
+const { inject: { service }, Controller } = Ember;
+
+export default Controller.extend({
+  session: service('session'),
+  currentUser: service('current-user'),
+
   actions: {
     logout() {
       this.get('session').invalidate();
