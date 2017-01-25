@@ -26,7 +26,7 @@ var logger =
     },
     log : function ( log)
     {
-        this.appendToLog( log+"\n");
+        this.appendToLog( this.logDate() + ": " +  log+"\n");
     },
     logDebug : function ( debug)
     {
