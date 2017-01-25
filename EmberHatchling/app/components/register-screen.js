@@ -24,7 +24,8 @@ export default Ember.Component.extend({
       $.post("/api/user", {
         user: formData
       }).then(function() {
-        that.get('session').authenticate('authenticator:oauth2', formData.email, formData.password).catch((reason) => {
+        that.get('session').authenticate('authenticator:oauth2', formData.email, formData.password)
+        .catch((reason) => {
           that.set('errorMessage', reason.error || reason);
         });
       }, function(res) {
