@@ -10,22 +10,24 @@ const saltRounds = 10;
 module.exports.addUser = function(req,res) {
   var data = req.body.user;
 
+  // Wenn keine Daten gesendet wurden:
   if(data === undefined || data.length == 0){
     res.status(409).send("Es wurden keine Daten gesendet");
     logger.logWarn("No Data was sent from registration");
     return;
   }
 
+  // Stelle eine Anfrage an die User-Datenbank
   return User.find({ 'email': data.email }, function(err, user) {
       if (err) {
         res.status(500);
         logger.logWarn("Connection Error");
         return;
       }
+      // Wenn es den Benutzer noch nicht gibt
       if (user === undefined || user.length == 0) {
         // Passwort Verschlüsselung
         data.password = bcrypt.hashSync(data.password, saltRounds);
-
         // Speichere neuen Benutzer in die Datenbank
         var newUser = new User(data);
         newUser.save(function(err) {
@@ -34,11 +36,14 @@ module.exports.addUser = function(req,res) {
               logger.logWarn("User couldn't be added");
               return;
             }
+            // Füge neuen Benutzer hinzu
             logger.log("User " + data.email + " added");
             res.json({user: newUser});
         });
         return;
       }
+
+      // Wenn es den Benutzer bereits gibt
       res.status(409).send("Diese E-Mail-Adresse ist bereits registriert");
       logger.logWarn("User tried to register with already existing email");
       return;

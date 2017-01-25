@@ -11,7 +11,6 @@ module.exports = function(router) {
   router.route('/api/products')
     // Fügt neues Produkt hinzu
     .post(function(req, res) {
-			console.log(req.body);
       products.addProduct(req,res);
     })
     // Findet Produkt nach ihrer Kategorie
