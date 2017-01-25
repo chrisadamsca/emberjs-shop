@@ -1,14 +1,13 @@
 <!-- an034 -->
 {{yield}}
 
-<h1>Login page</h1>
-
+<h1>Einloggen</h1>
 <form {{action 'authenticate' on='submit'}}>
   <label for="identification">E-Mail</label>
-  {{input id='identification' placeholder='Enter E-Mail' value=identification}}<br>
-  <label for="password">Password</label>
-  {{input id='password' placeholder='Enter Password' type='password' value=password}}<br>
-  <button type="submit">Login</button>
+  {{input id='identification' placeholder='E-Mail' value=identification}}<br>
+  <label for="password">Passwort</label>
+  {{input id='password' placeholder='Passwort' type='password' value=password}}<br><br>
+  <button type="submit">Einloggen</button>
   {{#if errorMessage}}
     <p>{{errorMessage}}</p>
   {{/if}}

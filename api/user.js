@@ -58,12 +58,12 @@ module.exports.loginUser = function(email, password, req, res) {
         }
         if (user === undefined || user.length == 0) {
           logger.logWarn("No User with email " + email + " found");
-          res.status(400).send('{"error": "No User with email and provided password found"}');
+          res.status(400).send('{"error": "Benutzername und zugehöriges Passwort stimmen nicht überein"}');
           return;
         }
         if(!bcrypt.compareSync(password, user[0].password)){
-          logger.logWarn("No User with email " + email + " and provided password found");
-          res.status(400).send('{"error": "No User with email and provided password found"}');
+          logger.logWarn("No User with provided email " + email + " and password found");
+          res.status(400).send('{"error": "Benutzername und zugehöriges Passwort stimmen nicht überein"}');
           return;
         }
 
