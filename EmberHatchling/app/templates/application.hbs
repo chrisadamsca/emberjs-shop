@@ -13,10 +13,9 @@
       </div>
     {{/if}}
     {{#if session.isAuthenticated}}
+      <p style="padding-right:10px">{{session.data.authenticated.name}} {{session.data.authenticated.surname}}</p>
       <a class="login" {{action 'logout'}}>Logout</a>
-      {{#if currentUser.user}}
-        <p>Signed in as {{currentUser.user.name}}</p>
-      {{/if}}
+
     {{else}}
       {{#link-to "login" class="login"}}Log In{{/link-to}}
       {{#link-to "register" class="login"}}Register{{/link-to}}

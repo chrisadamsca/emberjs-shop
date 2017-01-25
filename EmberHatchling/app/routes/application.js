@@ -7,11 +7,10 @@ const { service } = Ember.inject;
 
 export default Ember.Route.extend(ApplicationRouteMixin, {
   currentUser: service(),
-
+  session: service('session'),
   sessionAuthenticated() {
     this.transitionTo('/');
-    console.log("auth success!");
-    return this._loadCurrentUser();
+    console.log(this.get('session.data.authenticated.name'));
   },
 
   _loadCurrentUser() {

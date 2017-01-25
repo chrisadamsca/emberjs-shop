@@ -70,6 +70,6 @@ module.exports.loginUser = function(email, password, req, res) {
         var token = bcrypt.hashSync(user[0].email, saltRounds);
 
         logger.log("User "+ email + " logged in! Token: " + token );
-        res.send({ access_token: token });
+        res.send({ access_token: token, name: user[0].name, surname: user[0].surname });
     });
 };
