@@ -10,7 +10,12 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
   cart: Ember.inject.service(),
 
   sessionAuthenticated() {
-    this.transitionTo('/');
+    if (this.get('cart').itemCount > 0) {
+      this.transitionTo('/cart');
+    }
+    else {
+      this.transitionTo('/');
+    }
   },
 
   model(){
