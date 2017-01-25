@@ -4,7 +4,7 @@ const fs = require('fs');
 var logger =
 {
     log : "",
-    logFile : "",
+    logFile : "log.log",
     logErr : function( err)
     {
 

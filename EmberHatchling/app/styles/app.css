@@ -140,6 +140,7 @@ nav {
       height: 100%; } }
 
 .content > ul {
+  text-align: left;
   margin: 0; }
 
 a.login-cart > button {
