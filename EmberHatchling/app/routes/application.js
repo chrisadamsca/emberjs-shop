@@ -6,22 +6,21 @@ import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mi
 const { service } = Ember.inject;
 
 export default Ember.Route.extend(ApplicationRouteMixin, {
-  currentUser: service(),
+  session: service('session'),
+  cart: Ember.inject.service(),
 
   sessionAuthenticated() {
-    this.transitionTo('/');
-    console.log("auth success!");
-    return this._loadCurrentUser();
-  },
-
-  _loadCurrentUser() {
-    return this.get('currentUser').load();
+    if (this.get('cart').itemCount > 0) {
+      this.transitionTo('/cart');
+    }
+    else {
+      this.transitionTo('/');
+    }
   },
 
   model(){
 		const cart = this.get('cart');
 		return cart;
-	},
+	}
 
-  cart: Ember.inject.service()
 });

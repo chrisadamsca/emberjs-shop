@@ -1,6 +1,6 @@
 <!-- df029 -->
 
-<h1>Cart</h1>
+<h1>Warenkorb</h1>
 <table>
   <tr><th>Artikel</th><th>Preis</th><th>Stückzahl</th></tr>
   <!-- Go through all the items and allow them to add or reduce items-->
@@ -9,5 +9,6 @@
 {{/each}}
   <tr><td>Summe:</td><td>{{model.totalPrice}}</td><td></td><td></td></tr>
 </table>
+<br>
 {{#cart-order model=model}}
 {{/cart-order}}
